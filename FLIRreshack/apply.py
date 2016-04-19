@@ -1,7 +1,7 @@
 import hashlib, sys, os, time, telnetlib, argparse
 
 files = [
-	("common_dll.dll", [("0329ccd1217968c33b887094f569f62d40d54e6b9dd7cab34d555d75bcfdf194", "7e20d96602adf56ac128c9d3ef571bd9267e179ff54a51d659cfab9e5d96942e", "common_dll.dll.delta")], "/FlashBFS/system/"),
+	("common_dll.dll", [("75b37c3c755409cc355d2875eadfa128f8e6e27a1b2adf92273656a20ceb5037", "30e8fe5891fc3268bd834451ff054f184db1b4cbf49fb941b15efd3199a60cad", "common_dll.dll.delta")], "/FlashBFS/system/"),
 	("conf.cfc", [(6608, None, "conf.cfc.delta.e4"), (6336, None, "conf.cfc.delta.e5")], "/FlashFS/system/appcore.d/config.d/"),
 ]
 
