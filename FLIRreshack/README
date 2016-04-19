@@ -1,0 +1,53 @@
+Hello fellow E4/E5 user,
+
+You have a E4 that came with 2.3.0 and is stuck at 80x60? Here's help!
+(It should also work on an E5 that came with 2.3.0)
+
+Please check if your /FlashFS/system/appcore.d/config.d/conf.cfc is 6608
+bytes (or 6336 for the E5).
+
+If that's the case, that sounds good. Otherwise, this hack is not for you.
+
+ - Download+install python2 (not python3)
+ - Download+extract this zip
+ - Set Camera to RNDIS mode
+ - run "apply.py apply <ipaddress of camera>". If it fails, please provide
+   the output for diagnostics.
+ - Hard-Reset the camera
+
+To revert the hack, run "apply.py revert <ipaddress of camera>" from the
+backup directory that was generated in "apply".
+
+HAVE FUN. 
+
+DISCLAIMER:
+
+- You have an E4. Even with this hack, it's not suddenly an E8. Don't tell
+  anyone about that huge bargain, but rather enjoy the better quality.
+- You're doing this ON YOUR OWN RISK. It can brick your cam (but it
+  shouldn't and I haven't seen it, but...)
+
+REVISION HISTORY:
+
+v0.4:
+ - E5 support.
+
+v0.3:
+ - multiple retries in uploading common_dll.dll after failure; seems that 
+   this is required after 'stopapp'.
+
+v0.2:
+ - integrated telnet to 'stopapp'
+ - revert option
+ - integrated FTP upload
+
+v0.1:
+ - Initial "release"
+
+For linux users, there's a hacky tool that pushes the cam to RNDIS mode
+initially. It was generated with a USB trace of the original tool using
+the OpenVizsla protocol analyzer. (Yes, that thing actually works.)
+
+After that, the in-kernel rndis driver should work fine, however it's a bit
+tricky to figure out the IP address. If you tcpdump on the interface, you'll
+likely see some announcement packets from the cam.
